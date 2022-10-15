@@ -19,6 +19,17 @@ public class Location {
         this.builing = builing;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Location)) return false;
+         Location o = (Location) obj;
+         return Objects.equals(o.city, city)
+                 && Objects.equals(o.country, country)
+                 && Objects.equals(o.street, street)
+                 && builing == o.builing;
+    }
+
     public String getCity() {
         return city;
     }
